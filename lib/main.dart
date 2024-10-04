@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(FutureProvider<int?>(create:((context)=> Future.value(20)),
-  initialData: null,
-  child: const MyApp()));
+  runApp(const MyApp());
 
 }
 
@@ -36,14 +34,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int  _counter =  0;
   void _incrementCounter() {
-    // setState(() {
+    setState(() {
       _counter++;
-    // });
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-   final counter = context.watch<int?>();
+  //  final counter = context.watch<int?>();
     return Scaffold(
       appBar: AppBar(
        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -57,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             Text(
-              '$counter',
+              '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
